@@ -32,5 +32,4 @@ public static void main(String[] args) {
         System.out.println("There are "+ count+ " primes between 2 and "+ n +"("+ pre + "% are primes)");
             
         }
-
     }
