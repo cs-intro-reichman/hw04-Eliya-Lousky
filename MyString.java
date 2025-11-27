@@ -16,15 +16,43 @@ public class MyString {
         System.out.println(contains("resignation", "sign")); // true
     }
 
-    /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
-        // Replace the following statement with your code
-        return null;
+      
+        String lowerC = "";
+       int lengthStr = str.length();
+   
+        for (int i =0 ; i<lengthStr; i++){
+        char ch = str.charAt(i);
+        int asciiValume = ch;
+        if (asciiValume <= 90 && asciiValume >= 65){
+            char lowerCh = (char) (ch + 32);
+            lowerC+=lowerCh;
+
+        }else{
+            lowerC+=ch;
+        }
+    }
+        return lowerC;
+
     }
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        // Replace the following statement with your code
+        if (str2.length()>str1.length()){
+            return false;
+    
+        }
+        for (int i=0; i<= str1.length()-str2.length();i++){
+            int j;
+    for( j=0;j<str2.length();j++){ 
+        if (str1.charAt(i + j) != str2.charAt(j)) {
+            break;
+        }
+    }
+             if (j == str2.length()) {
+            return true;
+        }
+    }           
         return false;
     }
 }
