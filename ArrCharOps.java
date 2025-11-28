@@ -175,7 +175,7 @@ public class ArrCharOps {
        if (str1 == null || str2 == null) {
         return -2;
     }
-
+    
     int minLength = Math.min(str1.length(), str2.length());
 
     for (int i = 0; i < minLength; i++) {
@@ -198,5 +198,6 @@ public class ArrCharOps {
     else {
         return 0;
     }
+
 }
 }
