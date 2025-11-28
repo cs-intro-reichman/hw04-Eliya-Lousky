@@ -4,7 +4,7 @@ public class Primes{
         // Replace this statement with your code
         int n = Integer.parseInt(args [0]);
 
-        boolean [] Prime= new boolean[n+1];
+        boolean [] Prime = new boolean[n+1];
         int p = 2;
         while (p<=n) {
             Prime[p]= true;
@@ -23,18 +23,23 @@ public class Primes{
         p++;
     }
 
-        int i =2;
+    System.out.println("Prime numbers up to " + n + ":");
+
+      
         int count = 0;
-        while (i<Prime.length) {
-            if(Prime[i]){
+        int i = 2;
+        while (i <= n) {
+            if (Prime[i]) {
                 System.out.println(i);
                 count++;
             }
             i++;
         }
-        int pre = (int)(count/(double)n)*100;
-        System.out.println("There are "+ count+ " primes between 2 and "+ n +" ("+ pre + "% are primes)");
-            
-        }
-    }
 
+       
+        int percent = (int) (100.0 * count / n);
+
+        System.out.println("There are " + count + " primes between 2 and " + n +
+                           " (" + percent + "% are primes)");
+    }
+}
