@@ -138,20 +138,27 @@ public class ArrCharOps {
      *   zero    if str1 == str2,
      *   positive if str1 > str2.
      */
-    public static int compareTo(String str1, String str2) {
-        int minLength = Math.min(str1.length(), str2.length());
+  public static int compareTo(String str1, String str2) {
+    int minLength = Math.min(str1.length(), str2.length());
 
-        for (int i = 0; i < minLength; i++) {
-            char ch1 = str1.charAt(i);
-            char ch2 = str2.charAt(i);
 
-            if (ch1 != ch2) {
-                // כמו String.compareTo: מחזיר הפרש קודי התווים
-                return ch1 - ch2;
-            }
+    for (int i = 0; i < minLength; i++) {
+        char ch1 = str1.charAt(i);
+        char ch2 = str2.charAt(i);
+
+        if (ch1 < ch2) {
+            return -1; 
+        } else if (ch1 > ch2) {
+            return 1;  
         }
-
-        // אם כל התווים עד כאן זהים – ההבדל הוא באורך
-        return str1.length() - str2.length();
     }
+
+    if (str1.length() < str2.length()) {
+        return -1;
+    } else if (str1.length() > str2.length()) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
 }
